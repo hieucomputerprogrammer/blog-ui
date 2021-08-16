@@ -1,20 +1,37 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {HeaderComponent} from './components/header/header.component';
+import {SignUpComponent} from './components/auth/sign-up/sign-up.component';
+import {SignInComponent} from './components/auth/sign-in/sign-in.component';
+import {SignUpSuccessComponent} from './components/auth/sign-up-success/sign-up-success.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignUpComponent,
+    SignInComponent,
+    SignUpSuccessComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {path: 'sign-up', component: SignUpComponent},
+      {path: 'sign-in', component: SignInComponent}
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
