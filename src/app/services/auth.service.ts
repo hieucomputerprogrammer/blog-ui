@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {SignUpRequestPayload} from "../models/sign-up-request-payload";
 import {Observable} from "rxjs";
@@ -25,6 +25,16 @@ export class AuthService {
         this.localStorageService.store("jwt", data.jwt);
         this.localStorageService.store("username", data.username);
         return true;
-      }));
+      })
+    );
+  }
+
+  isAuthenticated(): boolean {
+    return this.localStorageService.retrieve('username') != null;
+  }
+
+  signOut(): void {
+    this.localStorageService.clear('jwt');
+    this.localStorageService.clear('username');
   }
 }

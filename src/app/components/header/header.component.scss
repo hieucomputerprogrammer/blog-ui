@@ -12,6 +12,19 @@
   float: right;
   text-decoration: none;
   color: aliceblue;
+
   padding-top: 10px;
   padding-right: 10px;
+}
+
+.sign-out, .create-post {
+  float: right;
+  color: aliceblue;
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+.sign-out:hover, .create-post:hover {
+  color: aliceblue;
+  text-decoration: none;
 }
