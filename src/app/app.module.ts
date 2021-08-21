@@ -10,6 +10,7 @@ import {SignUpSuccessComponent} from './components/auth/sign-up-success/sign-up-
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
+import {Ng2Webstorage} from "ngx-webstorage";
 
 @NgModule({
   declarations: [
@@ -24,9 +25,11 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2Webstorage.forRoot(),
     RouterModule.forRoot([
       {path: 'sign-up', component: SignUpComponent},
-      {path: 'sign-in', component: SignInComponent}
+      {path: 'sign-in', component: SignInComponent},
+      {path: 'sign-up-success', component: SignUpSuccessComponent}
     ]),
     HttpClientModule
   ],

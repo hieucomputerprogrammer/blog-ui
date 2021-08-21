@@ -1,26 +1,51 @@
 <div class="container justify-content-center">
-  <form class="form-signin" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-    <div class="form-group">
-      <label for="inputUsername" class="sr-only">Username:</label>
-      <input type="text" id="inputUsername" [formControlName]="'username'" class="form-control" placeholder="Username"
-             required="" autofocus="">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <h2 class="text-center mb-3 display-2 fw-normal">Sign Up</h2>
+    <div class="mb-3 row">
+      <div class="col-2">
+        <label for="username" class="col-form-label">Username:</label>
+      </div>
+      <div class="col-10">
+        <input type="text" id="username" [formControlName]="'username'" class="form-control"
+               aria-describedby="usernameHelp" required="" autofocus="">
+        <div id="usernameHelp" class="form-text">Enter username.</div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputEmail" class="sr-only">E-Mail:</label>
-      <input type="text" id="inputEmail" [formControlName]="'email'" class="form-control" placeholder="Email"
-             required="" autofocus="">
+    <div class="mb-3 row">
+      <div class="col-2">
+        <label for="email" class="col-form-label text-end">E-Mail:</label>
+      </div>
+      <div class="col-10">
+        <input type="email" id="email" [formControlName]="'email'" class="form-control"
+               aria-describedby="emailHelp" required="" autofocus="">
+        <div id="emailHelp" class="form-text">Enter your e-mail.</div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputPassword" class="sr-only">Password:</label>
-      <input type="password" id="inputPassword" [formControlName]="'password'" class="form-control"
-             placeholder="Password" required="">
+    <div class="mb-3 row">
+      <div class="col-2">
+        <label for="password" class="form-label">Password:</label>
+      </div>
+      <div class="col-10">
+        <input type="password" id="password" [formControlName]="'password'" class="form-control"
+               aria-describedby="passwordHelp" required="">
+        <div id="passwordHelp" class="form-text">Enter password.</div>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="inputConfirmPassword" class="sr-only">Confirm password:</label>
-      <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control"
-             placeholder="Confirm Password" required="">
+    <div class="mb-3 row">
+      <div class="col-2">
+        <label for="confirmPassword" class="form-label">Confirm password:</label>
+      </div>
+      <div class="col-10">
+        <input type="password" id="confirmPassword" [formControlName]="'confirmPassword'" class="form-control"
+               aria-describedby="confirmPasswordHelp" required="">
+        <div id="confirmPasswordHelp" class="form-text">Confirm your password.</div>
+      </div>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <div class="mb-3 row">
+      <div class="col-2"></div>
+      <div class="col-10">
+        <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign Up</button>
+      </div>
+    </div>
   </form>
 </div>
